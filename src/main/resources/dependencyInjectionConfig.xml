@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="specifications" class="com.dependencyInjection.Specifications">
+        <!-- Setters of the following properties will be called -->
+        <property name="make" value="BMW"/>
+        <property name="model" value="M8 Compilation"/>
+    </bean>
+
+    <bean id="car" class="com.dependencyInjection.Car">
+        <!-- Constructor will be called with value as bean passed to the argument of the bean with name given -->
+        <constructor-arg name="specifications" ref="specifications"/>
+    </bean>
+
+</beans>
