@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="specifications" class="com.setterInjection.Specifications">
+        <!-- Setters of the following properties will be called -->
+        <property name="make" value="BMW"/>
+        <property name="model" value="M8 Compilation"/>
+    </bean>
+
+    <bean id="car" class="com.setterInjection.Car">
+        <property name="specifications" ref="specifications"/>
+    </bean>
+
+</beans>
