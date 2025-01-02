@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="specification" class="com.autowire.byType.Specification">
+        <!-- Setters of the following properties will be called -->
+        <property name="make" value="BMW"/>
+        <property name="model" value="M8 Compilation"/>
+    </bean>
+
+    <!-- So, setters will be checked in car class
+         if setSpecification then bean with type as
+         Specification (i.e. argument passed) will be
+         sent as the dependency. -->
+    <bean id="car" class="com.autowire.byType.Car" autowire="byType"/>
+</beans>
